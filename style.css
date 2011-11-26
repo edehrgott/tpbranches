@@ -1,0 +1,647 @@
+﻿/*
+Theme Name: tpBranches
+Theme URI: http://www.tekpals.com
+Description: tpBranches is a 3 column theme with the primary top menu horizontal across the header and the submenus presented in the left sidebar. . The theme supports several widgetized sidebars on both sides and the footer along with a variable center column that automatically adjusts for the window width. The theme comes with a home page template that includes a slidewhow that responds automatically to the current browser window size. Requires WordPress 3.0+
+Tags: brown, orange, three-columns, right-sidebar, flexible-width, custom-menu, custom-header, custom-background, translation-ready, editor-style, sticky-post, theme-options
+Version: 0.1.0
+Author: <a href="http://www.tekpals.com">Ed Ehrgott</a>
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/  
+
+/*****Reset*****/
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, blockquote, pre, form, fieldset, table, th, td {
+	padding: 0;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #5a5a5a;
+	font-size: 14px;
+	line-height: 20px;
+}
+p {
+	padding: 0;
+	margin-top: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #5a5a5a;
+	font-size: 14px;
+	line-height: 20px;
+}
+a {
+	color: #000;
+}
+
+/*****Custom Classes  - MAY WANT TO DELETE! *****/
+.clearing { clear: both; }
+.clearfix { overflow: hidden; }
+.last { margin-bottom: 0; }
+.screenReader { left: -9999px; position: absolute; top: -9999px; }
+
+/*
+ * Header Divs
+ */
+#masthead {
+	background: #ffffff;
+	min-width: 940px;
+	height: 100px;
+}
+#logo {
+	float: left;
+	display: inline;
+	margin: 0 20px 0 0;	
+}
+#masthead-text {
+	padding: 10px 0 0 0;
+	color: #fff;
+	margin: 0 0 0 10px;	
+}
+#masthead-text a {
+	color: #000;
+	font-size: 150%;
+	text-decoration: none;
+}
+#masthead-text h2 {
+	color: #696969;
+	font-size: 125%;
+}
+/*
+ * horizontal navigation
+ */
+#h_nav {
+	background: #000000;
+	height: 24px;
+	min-width: 940px;
+	display: block; 
+	padding: 0 0 0 15px;
+	font-weight: bold;
+}
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	height: 24px;
+}
+.sf-menu {
+	line-height: 1.0;
+}
+.sf-menu ul {
+	position: absolute;
+	top:	-999em;
+	width: 10em; 
+}
+.sf-menu ul li {
+	width: 100%;
+}
+.sf-menu li:hover {
+	visibility: inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	float: left;
+	position: relative;
+}
+.sf-menu a {
+	font-size: 12px;
+	padding: 0 10px 0 10px;
+	line-height: 24px;
+	text-decoration: none;
+}
+.sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	color: #bdbdbd;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	color: #ffffff;
+	background: #5a5a5a;
+	outline: 0;
+}
+.sf-menu .current-menu-item a {  /* added to highlight selected page */
+	color: #ffffff;
+}
+/*
+ * Page Wrappers
+ */
+#wrapper1 {
+	position: relative;
+	text-align: left;
+	width: 100%;
+}
+#wrapper2 {
+	float: left;
+	position: relative;
+	background-image: url('images/l-sidebar-bk-default.png');
+	background-repeat: repeat-y;
+	background-position: top left;
+	text-align: left;
+	width: 100%;
+}
+#container {
+	min-width: 940px;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+/*** primary page/post content ***/
+#page_content {
+	position: relative;
+	overflow: hidden;
+	top: 5px;
+	padding: 0 15px;
+	line-height: 1.4em;
+}
+#slideshow {
+	padding: 0 0 15px 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 940px;
+	height: 240px;
+}
+
+/*
+ * left column navigation
+ */
+#left_col {
+	position: relative;
+	float: left;
+	top: 0px;
+	left: 0px;
+	margin: 0 0 -10px 0;
+	z-index: 100;
+	width: 170px;
+}
+#left_col li.hidden {
+	visibility: hidden;
+}
+.sf-vertical, .sf-vertical li {
+	width: 11em;
+	padding-left: 17px;
+	list-style-type: none;
+}
+.sf-vertical, .sf-vertical li li {
+	width: 11em;
+	padding-left: 0px;
+	list-style-type: none;
+	visibility: visible;
+}
+.sf-vertical, .sf-vertical li li li {
+	width: 11em;
+	padding-left: 10px;
+	list-style-type: none;
+	visibility: visible;
+}
+/* this lacks ul at the start of the selector, so the styles from the main CSS file override it where needed */
+.sf-vertical li:hover ul,
+.sf-vertical li.sfHover ul {
+	left: 10em; /* match ul width */
+	top:	0;
+}
+.sf-vertical a {
+	color: #bdbdbd;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: bold;
+}
+.sf-vertical a:hover {
+	color: #ffffff;
+	font-weight: bold;    
+}
+.current-menu-item a {
+	color: #ffffff;
+}
+
+ul.l_sub_menu a {
+	color: #bdbdbd;
+	text-decoration: none;
+	padding-left: 10px;
+}
+ul.l_sub_menu .current-menu-item a {
+	color: #ffffff;
+}
+ul.l_sub_menu ul.l_sub_menu a {
+    color: #bdbdbd;
+	text-decoration: none;
+	padding-left: 10px;
+}
+ul.l_sub_menu ul.l_sub_menu a:hover {
+    color: #ffffff;
+}
+ul.l_sub_menu ul.l_sub_menu .current-menu-item a {
+	color: #ffffff;
+}
+ul.l_sub_menu ul.l_sub_menu ul.l_sub_menu a {
+    color: #bdbdbd;
+	text-decoration: none;
+	padding-left: 45px;
+}
+ul.l_sub_menu ul.l_sub_menu ul.l_sub_menu a:hover {
+    color: #ffffff;
+}
+ul.l_sub_menu ul.l_sub_menu ul.l_sub_menu .current-menu-item a {
+	color: #bdbdbd;
+}
+#container {
+	min-width: 950px;
+	position: relative;
+	margin: 0;
+	padding: 10px 0 0 0;
+}
+/*** primary page/post content ***/
+#page_content {
+	position: relative;
+	overflow: hidden;
+	top: 5px;
+	padding: 0 15px;
+	line-height: 1.4em;
+}
+.page-link {
+    clear: both;
+    padding-top: 10px;
+}
+.edit-link {
+    clear: both;    
+}
+
+#page_content h1 {
+	color: #5a5a5a;
+	font-size: 21px;
+	font-weight: bold;
+	padding: 0 0 26px 0;
+}
+#page_content h2 {
+	color: #5a5a5a;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 21px;
+	padding: 0 0 10px 0;
+}
+#page_content h3 {
+	color: #5a5a5a;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 20px;
+	padding: 0 0 10px 0;
+}
+#page_content h4 {
+	color: #5a5a5a;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: normal;
+	line-height: 20px;
+	padding: 0 0 4px 0;
+}
+/*
+#page_content ul {
+    margin-left: 15px;
+}
+#page_content a {
+	color: #4F8ABE;
+}
+#page_content a:hover {
+    color: #FDB913;
+}*/
+
+.post {
+	padding: 10px 0 0 0;
+}
+#right_col {
+	position: relative;
+	top: 15px;
+	right: 0px;
+	margin: 0 0 -10px 0;
+	width: 190px;
+	float: right;
+	font-size: x-small;
+	padding: 10px;
+	z-index: 99;
+	line-height: 1.4em;
+}
+#right_col ul {
+	list-style: none;
+    font-size: .9em;
+	margin: 0px;
+	padding: 0px 0px 20px 0px;
+}
+#right_col ul li {
+	list-style: none;
+	margin: 0px;
+	padding: 5px 0px 0px 0px;
+}
+#right_col ul li a {
+	text-decoration: none;
+}
+/*
+ * recent blog posts on right home page sidebar
+ */
+#recent_posts {
+	padding: 10px 4px 4px 4px;
+}
+#recent_posts_meta p {
+    font-size: 11px;
+}
+#recent_posts li {
+    list-style: none;
+    margin: 0 0 20px 0;
+}
+/*
+ * footer
+ */
+#footer {
+	background: #000;
+	clear: both;
+	width: 100%;
+}
+#footer h3 {
+	color: #fff;
+	font-size: 16px;
+}
+#footer p {
+	color: #ededed;	
+}
+#footer div {
+	color: #ededed;
+}
+
+#footer a {
+	color: #fff;
+}
+#footer ul li {
+	list-style: none;
+}
+#footer-left {
+	float: left;
+	padding: 0 0 15px 190px;
+	display: inline;
+	position: relative;
+	width: 300px;
+}
+#footer-center {
+	display: inline;
+	position: relative;
+	padding: 0 0px 15px 0;
+}
+#footer-right {
+	float: right;
+	position: relative;	
+	display: block;
+	padding: 0 200px 15px 0;
+	width: 300px;
+}
+#footer_txt {
+	height: 18px;
+	color: #bdbdbd;
+	font-size: 12px;
+	text-align: center;
+	line-height: 18px;
+	padding: 15px 0 0 0;
+}
+#footer_txt a {
+	color: #fff;
+}
+
+/*
+ * text styles
+ */
+.center {
+	text-align: center;
+}
+.text_box {
+	border-style: solid;
+	border-width: 1px;
+	padding: 4px;
+}
+.indent1 {
+	margin-left: 40px;
+}
+.indent2 {
+	margin-left: 80px;
+}
+.indent3 {
+	margin-left: 120px;
+}
+.caption {
+    font-size: x-small;
+}
+
+/*
+ * WordPress image styling
+ */
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+}
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+.alignleft, img.alignleft, a img.alignleft {
+	display: block;
+	float: left;
+	padding-right: 5px;
+	border: none;
+}
+.alignright, img.alignright, a img.alignright {
+	display: block;
+	float: right;
+	padding-left: 5px;
+	border: none;
+}
+.aligncenter, img.aligncenter, a img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+}
+
+/*
+ * WordPress gallery styling
+ */
+
+/* The Gallery container (div) */
+.gallery { }
+ 
+/* A Gallery item container,
+ for 3, 2, 4, & 6 column galleries */
+.gallery .gallery-item { }
+.gallery-columns-2 .gallery-item { }
+.gallery-columns-4 .gallery-item { }
+.gallery-columns-5 .gallery-item { }
+.gallery-columns-6 .gallery-item { }
+
+/* The actual image inside a container
+for 3, 2, 4, 5 & 6 column galleries */
+.gallery img { }
+.gallery-columns-2 .attachment-medium { }
+.gallery-columns-4 .attachment-thumbnail { }
+.gallery-columns-5 .attachment-thumbnail { }
+.gallery-columns-6 .attachment-thumbnail { }
+ 
+/* A gallery image caption */
+.gallery .gallery-caption { }
+ 
+/* Definition lists elements */
+.gallery dl, .gallery dt { }
+ 
+/* Pick the second line break if two
+line breaks are adjacent */
+.gallery br+br { }
+
+.gallery { margin: 0 auto 18px; }
+.gallery .gallery-item {
+    float: left;
+    margin-top: 15px;
+    text-align: center;
+    width: 33%;
+}
+.gallery-columns-2 .gallery-item { width: 50%; }
+.gallery-columns-4 .gallery-item { width: 25%; }
+.gallery-columns-5 .gallery-item { width: 20%; }
+.gallery-columns-6 .gallery-item { width: 16%; }
+.gallery img {
+    box-shadow: 0px 0px 4px #999;
+    border: 1px solid white;
+    padding: 8px;
+    background: #f2f2f2;
+}
+.gallery img:hover {
+    background: white;
+}
+.gallery-columns-2 .attachment-medium {
+    max-width: 92%;
+    height: auto;
+}
+.gallery-columns-4 .attachment-thumbnail {
+    max-width: 84%;
+    height: auto;
+}
+.gallery-columns-5 .attachment-thumbnail {
+    max-width: 78%;
+    height: auto;
+}
+.gallery-columns-6 .attachment-thumbnail {
+    max-width: 72%;
+    height: auto;
+}
+.gallery .gallery-caption {
+    color: #888;
+    font-size: 12px;
+    margin: 0 0 12px;
+}
+
+.gallery dl, .gallery dt { margin: 0; }
+.gallery br+br { display: none; }
+
+/*
+ * other WordPress styling
+ */
+blockquote{
+	margin: 0px 25px 15px 25px;
+	padding: 0px 25px 0px 10px;
+	background: #ededed;
+	border-top: 2px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+.contentmeta {    
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size: 10px;
+	padding: 1px 0px 0px 4px;
+	margin: 0px;
+}
+.contentmeta a {    
+	color: #000000;
+	text-decoration: none;   
+}
+.contentmeta p {    
+	font-size: 12px;
+}
+.postspace {
+	background: url(images/spacer.png);
+	width: 300px;
+	height: 32px;
+	margin: 0px;
+	padding: 0px;
+	clear: both;
+}
+.sticky {
+	background: #ededed;
+	padding: 5px 5px 5px 5px;
+}
+.sticky:before {
+	content: url(images/thumbtack.png);
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.pagenav {
+	text-align: center;
+}
+/*** comment styling ***/
+#comments {
+   position:relative;
+   clear:both;
+}
+.commentlist li {
+   list-style: none;    
+}
+.commentlist .odd {
+   background-color: #bdbdbd;
+   padding: 10px;
+   margin-bottom: 10px;
+}
+.commentlist .even {
+   background-color: #969696;
+   padding: 10px;
+   margin-bottom: 10px;
+}
+.commentlist .bypostauthor {
+   border-style: solid;
+   border-width: 1px;
+   padding: 4px;
+}
+.comment-form-comment label {
+   display: block;
+}
+.comment-form-comment textarea {
+   width: 90%;
+}
+#comments .avatar img {
+	float: left;
+	margin: 0 15px 0 0;
+	vertical-align: middle;
+	border: 1px solid #DDD;
+	padding: 3px;
+	background: white;
+}
+#comments .comment-meta {
+	font-size: 12px;
+	padding-left: 87px;	
+}
+#comments .comment-text {
+	padding: 20px 5px 5px 5px;
+	background: #ededed;
+	margin-left: 86px;
+}
+#comments .reply {
+	padding-top: 10px;
+}
+#comments .reply a {
+	padding: 5px 17px 5px 17px;
+	background: #555;
+	color: white !important;
+	text-shadow: none;
+	text-decoration: none;
+	top: -8px;
+	position: relative;	
+}
+#comments .reply a:hover {
+	background: #000;
+}

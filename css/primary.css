@@ -1,0 +1,86 @@
+/*
+ * style sheet used for Burnt stlying
+ * http://colorschemedesigner.com/#0042Pw0w0w0w0
+ */
+
+p {
+	color: #333;
+}
+a {
+	color: #3914af;
+}
+#masthead {
+	background-image: url('../images/orange-header.png');
+     background-repeat: repeat-x;
+}
+#masthead-text {
+	padding: 10px 0 0 0;
+	margin: 0 0 0 10px;
+}
+#masthead-text a {
+	color: #ff0000;
+	font-size: 150%;
+	text-decoration: none;
+}
+#masthead-text h2 {
+	color: #333;
+	font-size: 125%;
+}
+#h_nav {
+	background: #009999;
+}
+.sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	color: #ffffff;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	color: #ffffff;
+	background: #5ccccc;
+}
+.sf-menu .current-menu-item a {  /* added to highlight selected page */
+	color: #ffb273;
+}
+#wrapper2 {
+	background-image: url('../images/l-sidebar-bk-orange.png');
+}
+.sf-vertical a {
+	color: #FFB273;
+}
+#page_content h1 {
+	color: #A64B00;
+}
+.contentmeta a {
+	color: #a64b00;
+	text-decoration: none;
+}
+.sticky {
+	background: #ffb273;
+}
+blockquote{
+	background: #ffb273;
+}
+#footer {
+	background: #ffb273;
+}
+#footer h3 {
+	color: #A64B00;
+}
+#footer p {
+	color: #333;	
+}
+#footer div {
+	color: #333;
+}
+#footer a {
+	color: #A64B00;
+}
+#footer ul li {
+	list-style: none;
+}
+#footer_txt {
+	color: #333;
+}
+#footer_txt a {
+	color: #A64B00;
+}
+
