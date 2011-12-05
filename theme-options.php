@@ -75,7 +75,7 @@ function tpBranches_options_do_page() {
 			<?php settings_fields( 'tpBranches_option_group' ); ?>
 			<?php $options = get_option( 'tpBranches_options' );
 			
-			_e( '<p>tpBranches instructions go here.</p>', 'tpBranches' );
+			//_e( '<p>tpBranches instructions go here.</p>', 'tpBranches' );
 			?>
 			<table class="form-table">
 				
@@ -114,10 +114,12 @@ function tpBranches_options_do_page() {
 				<tr valign="top"> <th scope="row"><?php _e( 'Use a logo in the page header?', 'tpBranches' ); ?></th>
 					<td>
 						<input id="tpBranches_options[logo]" class="regular-text" type="text" name="tpBranches_options[logo]" value="<?php esc_attr_e( $options['logo'] ); ?>" />
-						<label class="description" for="tpBranches_options[logo]"><?php _e( 'Enter location of logo file. (recommend 175x100px transparent png)', 'tpBranches' ); ?></label>
+						<label class="description" for="tpBranches_options[logo]"><?php _e( 'Enter location of logo image. (recommend 100px height transparent png)', 'tpBranches' ); ?></label>
 					</td>
-				</tr>				
+				</tr>
+			</table>
 
+			<table class="form-table" style="background:#eeeeee; border:solid 1px #ccc; -moz-border-radius: 10px; -webkit-border-radius: 10px; overflow:hidden;">
 				<?php
 				/**
 				 * Slideshow on home page template?
@@ -134,19 +136,21 @@ function tpBranches_options_do_page() {
 				/**
 				 * Where are the slides?
 				 */
-				for ($i=1; $i<=5; $i++) { ?>
+				for ($i=1; $i<=5; $i++) { ?>					
+
 					<tr valign="top"> <th scope="row"><?php _e( 'Location of slide' . $i, 'tpBranches' ); ?></th>
 						<td>
 							<input id="tpBranches_options[slide<?php echo $i; ?>]" class="regular-text" type="text" name="tpBranches_options[slide<?php echo $i; ?>]" value="<?php esc_attr_e( $options['slide' . $i] ); ?>" />
-							<label class="description" for="tpBranches_options[slide<?php echo $i; ?>]"><?php _e( 'Location of slide ' . $i, 'tpBranches' ); ?></label>
+							<label class="description" for="tpBranches_options[slide<?php echo $i; ?>]"><?php _e( 'Enter here the location of slide ' . $i, 'tpBranches' ); ?></label>
 						</td>
 					</tr>
-					<tr valign="top"> <th scope="row"><?php _e( 'url for slide' . $i, 'tpBranches' ); ?></th>				
+					<tr valign="top"> <th scope="row"><?php _e( 'Link for slide' . $i, 'tpBranches' ); ?></th>				
 						<td>
 							<input id="tpBranches_options[slideurl<?php echo $i; ?>]" class="regular-text" type="text" name="tpBranches_options[slideurl<?php echo $i; ?>]" value="<?php esc_attr_e( $options['slideurl' . $i] ); ?>" />
-							<label class="description" for="tpBranches_options[slideurl<?php echo $i; ?>]"><?php _e( 'url for slide ' . $i, 'tpBranches' ); ?></label>
+							<label class="description" for="tpBranches_options[slideurl<?php echo $i; ?>]"><?php _e( 'Enter here the url you want the visitor to be taken to when slide ' . $i . ' is clicked.', 'tpBranches' ); ?></label>
 						</td>					
 					</tr>
+					</div>
 				<?php } ?>
 			</table>
 

@@ -1,4 +1,4 @@
-Babycenter Stylesite WordPress Theme
+tpBranches WordPress Theme
 
 Author: Ed Ehrgott
 http://www.tekpals.com
@@ -13,17 +13,33 @@ INSTALL:
 2. Go to WordPress Admin, Appearance/Themes.
 3. Activate the theme.
 
-// to be written
-jQuery features:
-nav_background_alt use of jQuery 
+This is a pre-release version. Please send any errors or bugs to ed@tekpals.com.
 
-home_logo/sub_logo and placement of images/png's
+tpBranches is a is a 3 column theme with a horizontal menu across the header and a vertical menu on the left. The
+horizontal menu shows the top most menu items while the vertical menu shows the second and greater level menus. 
+The sub menu by default also shows the top level menu as the first item; this can be supressed by giving the top
+level menu the class of 'hidden'. The theme supports 2 widgetized sidebars on the right, and three widgetized
+areas in the footer. The center column is flexible and automatically adjusts for the current browser window width.
 
-to do:
-cycle slides on home page (use cutom post type)
-footer widgets
+The theme supports several styles and a customized logo in the Theme Options section.
 
+The theme cupport an options slideshow on the home page. The slideshow is made from five individual graphic files
+which can be set in the Theme Options section of the back end. In addition, the link for each slide can be set here
+too.
 
-to document:
-style themes
-hidden class to hide submenu headers
+The slideshow is aware of the browser window size and will respond to automatically fit in a smaller window size.
+
+For minor styling changes please edit custom.css rather than styles.css. Any styling in custom.css will take
+prededent over styles.css and ease the process of theme updating.
+
+Since this is a variable width theme, please pay attention to the width of images. I suggest that you modify
+the settings/media section of the administrative area to disply medium images at no more than 500x500 and large
+images at no more than 900x900. Keep in mind that large images may not display as inended on screens less than 1024
+pixels wide.
+
+I've authored several themes for individual sites; tpBranches is my second theme intended for wide distribution; I
+would appreciate comments. I have some other themes in process to meet specialized layout requirements. I wanted
+to give something back to the many people who helped me learn CSS, WordPress, php and jQuery through their blogs.
+Thanks!
+
+It is completely optional, but if you like the theme I would appreciate it if you keep the credit link in the footer.

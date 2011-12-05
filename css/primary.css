@@ -10,7 +10,7 @@ a {
 	color: #3914af;
 }
 #masthead {
-	background-image: url('../images/orange-header.png');
+	background-image: url('../images/primary-header.jpg');
      background-repeat: repeat-x;
 }
 #masthead-text {
@@ -27,7 +27,7 @@ a {
 	font-size: 125%;
 }
 #h_nav {
-	background: #009999;
+	background: #3914af;
 }
 .sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
 	color: #ffffff;
@@ -35,35 +35,76 @@ a {
 .sf-menu li:hover, .sf-menu li.sfHover,
 .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
 	color: #ffffff;
-	background: #5ccccc;
+	background: #b76ed7;
 }
 .sf-menu .current-menu-item a {  /* added to highlight selected page */
-	color: #ffb273;
+	color: #ffd300;
 }
 #wrapper2 {
-	background-image: url('../images/l-sidebar-bk-orange.png');
+	background-image: url('../images/l-sidebar-bk-primary.png');
 }
 .sf-vertical a {
-	color: #FFB273;
+	color: #FF7373;
 }
 #page_content h1 {
-	color: #A64B00;
+	color: #008500;
 }
 .contentmeta a {
-	color: #a64b00;
+	color: #008500;
 	text-decoration: none;
 }
 .sticky {
-	background: #ffb273;
+	background: #ffe773;
 }
 blockquote{
-	background: #ffb273;
+	background: #ffe773;
+}
+#comments {
+   position:relative;
+   clear:both;
+}
+.comment:nth-child(4n+1) {
+	background-color: #ff4040;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.comment:nth-child(4n+2) {
+	background-color: #ffe773;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.comment:nth-child(4n+3) {
+	background-color: #876ed7;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.comment:nth-child(4n) {
+	background-color: #76e667;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.commentlist .bypostauthor {
+   border-style: solid;
+   border-width: 1px;
+   padding: 4px;
+}
+.comment-form-comment label {
+   display: block;
+}
+.comment-form-comment textarea {
+   width: 90%;
+}
+#comments .reply a {
+	background: #a64b00;
+}
+#comments .reply a:hover {
+	background: #bf7130;
 }
 #footer {
-	background: #ffb273;
+	background: #ffd300;
 }
 #footer h3 {
-	color: #A64B00;
+	color: #A68900;
 }
 #footer p {
 	color: #333;	

@@ -70,9 +70,6 @@ blockquote{
    position:relative;
    clear:both;
 }
-.commentlist li {
-   list-style: none;    
-}
 .commentlist .odd {
    background-color: #ffb273;
    padding: 10px;
@@ -94,10 +91,6 @@ blockquote{
 .comment-form-comment textarea {
    width: 90%;
 }
-
-
-
-
 #comments .reply a {
 	background: #a64b00;
 }
