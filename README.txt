@@ -17,7 +17,7 @@ This is a pre-release version. Please send any errors or bugs to ed@tekpals.com.
 
 tpBranches is a is a 3 column theme with a horizontal menu across the header and a vertical menu on the left. The
 horizontal menu shows the top most menu items while the vertical menu shows the second and greater level menus. 
-The sub menu by default also shows the top level menu as the first item; this can be supressed by giving the top
+The sub menu by default also shows the top level menu as the first item; this can be suppressed by giving the top
 level menu the class of 'hidden'. The theme supports 2 widgetized sidebars on the right, and three widgetized
 areas in the footer. The center column is flexible and automatically adjusts for the current browser window width.
 
@@ -30,7 +30,7 @@ too.
 The slideshow is aware of the browser window size and will respond to automatically fit in a smaller window size.
 
 For minor styling changes please edit custom.css rather than styles.css. Any styling in custom.css will take
-prededent over styles.css and ease the process of theme updating.
+precedent over styles.css and ease the process of theme updating.
 
 Since this is a variable width theme, please pay attention to the width of images. I suggest that you modify
 the settings/media section of the administrative area to disply medium images at no more than 500x500 and large

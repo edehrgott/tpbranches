@@ -9,22 +9,22 @@
  *
  */
 
-wp_enqueue_script('jquery');
-
-if ( !is_admin() ) { 
+function tpBranches_scripts() {
+     // load required scripts
 	wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.js' );
 	wp_register_script('hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js' );
 	wp_register_script('cycle', get_stylesheet_directory_uri() . '/js/cycle.2.9996.js' );
 	wp_register_script('easing', get_stylesheet_directory_uri() . '/js/jquery.easing.1.3.js' );
 	wp_register_script('local', get_stylesheet_directory_uri() . '/js/local.js' );
-	
-	// enqueue the scripts
+	wp_enqueue_script('jquery');
 	wp_enqueue_script('superfish');   
 	wp_enqueue_script('hoverIntent');
 	wp_enqueue_script('cycle');
 	wp_enqueue_script('easing');
 	wp_enqueue_script('local');	
-}
+}    
+ 
+add_action('wp_enqueue_scripts', 'tpBranches_scripts');
 
 	// widgetized areas
 	register_sidebar( array(
@@ -171,7 +171,7 @@ class Selective_Walker extends Walker_Nav_Menu {
         $current_element_markers = array( 'current-menu-item', 'current-menu-parent', 'current-menu-ancestor' );  //added by continent7
         foreach ( $top_level_elements as $e ){  
             // descend only on current tree
-            $descend_test = array_intersect( $current_element_markers, $e->classes );
+		  $descend_test = array_intersect( $current_element_markers, $e->classes );
             if ( !empty( $descend_test ) ) 
                 $this->display_element( $e, $children_elements, 4, 0, $args, $output );
         }
